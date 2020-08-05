@@ -1,0 +1,12 @@
+{
+  "name": "MncApp",
+  "displayName": "MncApp",
+  "expo": {
+    "name": "MncApp",
+    "slug": "MncApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
