@@ -5,8 +5,12 @@
     "name": "MncApp",
     "slug": "MncApp",
     "version": "1.0.0",
+    "icon": "./public/MnC.png",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.Yash.MnCApp"
+    }
   }
 }
