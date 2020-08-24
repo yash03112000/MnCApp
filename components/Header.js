@@ -4,13 +4,15 @@ import { MaterialIcons , Ionicons} from '@expo/vector-icons';
 const windowHeight = Dimensions.get('window').height
 const width = Dimensions.get('window').width
 import { useNavigation } from '@react-navigation/native';
+import {
+  TouchableHighlight,
+} from "react-native-gesture-handler";
 
 
 
 
 
-
-export default function Header({opacity}) {
+export default function Header({opacity,title,back,navto}) {
 
     const styles = StyleSheet.create({
       headerCotainer: {
@@ -30,7 +32,6 @@ export default function Header({opacity}) {
       }
       });
 
-      const navigation = useNavigation()
 
 
 
@@ -39,10 +40,10 @@ export default function Header({opacity}) {
         <View style={styles.headerCotainer}>
           <View style={styles.headerWrapper}>
             <OldAnim.View style={{ paddingVertical:20, flexDirection:'row',opacity}}>
-              <Ionicons name="md-arrow-back" size={24} color="white" onPress={()=>{ navigation.replace('Clubs')}}/>
+              <Condition back={back} navto={navto}  />
               <Text
                 style={styles.headerText}>
-                Anime Society 
+                {title} 
               </Text>
             </OldAnim.View>
           </View>
@@ -51,3 +52,18 @@ export default function Header({opacity}) {
   );
 }
 
+
+const Condition = ({back,navto})=>{
+  const navigation = useNavigation()
+  // console.log(navto)
+
+  if(back){
+    return(
+      <TouchableHighlight onPress={()=>{ navigation.replace(navto)}}>
+        <Ionicons name="md-arrow-back" size={24} color="white" />
+      </TouchableHighlight>
+    )
+  }else {
+    return null
+  }
+}

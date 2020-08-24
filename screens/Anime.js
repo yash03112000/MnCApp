@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View,Dimensions,ScrollView,FlatList ,Animated as OldAnim,Image,ImageBackground } from 'react-native';
 // import Header from '../components/Header';
-import StickyParallaxHeader from 'react-native-sticky-parallax-header'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Card } from 'react-native-elements'
 var img = require('../public/dnacover1.jpg')
@@ -42,9 +41,6 @@ import Animated , {    abs,
   } from "react-native-redash";
 
   import {
-    PanGestureHandler,
-    State,
-    TouchableWithoutFeedback,
     TouchableHighlight,
   } from "react-native-gesture-handler";
 
@@ -215,7 +211,7 @@ const CutomHeaderScreen = ({navigation}) => {
   return (
 
     <View>
-      <Header opacity={opacity} />
+      <Header opacity={opacity} title="Anime Society" back={true} navto='Clubs' />
       <ScrollView onScroll={event(
         [{ nativeEvent: { contentOffset: { y: scrollY.y } } }],
         { useNativeDriver: false }
@@ -348,41 +344,3 @@ return (
 
 
 
-
-    // <StickyParallaxHeader
-    //   headerType="TabbedHeader"
-    //   backgroundImage={
-    //      img
-    //   }
-    //   backgroundColor={'black'}
-    //   header={renderHeader}
-    //   title={'Anime Society'}
-    //   titleStyle={styles.titleStyle}
-    //   foregroundImage={require('../public/anime.png')}
-    //   tabs={[
-    //     {
-    //       title: 'About Us',
-    //       content: Home(text.biography)
-    //     },
-    //     {
-    //       title: 'Team',
-    //       content: Team()
-    //     },
-    //     {
-    //       title: 'Events',
-    //       content: Events()
-    //     }
-    //   ]}
-    //   tabTextContainerStyle={styles.tabTextContainerStyle}
-    //   tabTextContainerActiveStyle={styles.tabTextContainerActiveStyle}
-    //   tabTextStyle={styles.tabTextStyle}
-    //   tabTextActiveStyle={styles.tabTextActiveStyle}
-    //   tabWrapperStyle={styles.tabWrapperStyle}
-    //   tabsContainerStyle={styles.tabsContainerStyle}
-      // scrollEvent={event(
-      //   [{ nativeEvent: { contentOffset: { y: scrollY.y } } }],
-      //   { useNativeDriver: false }
-      // )}
-    //   snapToEdge={false}
-
-    // />
