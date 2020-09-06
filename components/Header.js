@@ -54,7 +54,7 @@ export default function Header({opacity,title,back,navto}) {
 
 
 const Condition = ({back,navto})=>{
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
   // console.log(navto)
 
   if(back){

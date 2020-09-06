@@ -198,7 +198,7 @@ const CutomHeaderScreen = () => {
             <Navbar color={firstcl} bgcolor={firstbgcl} text="Home" />
           </TouchableHighlight>
           <TouchableHighlight onPress={()=>{setNav(1);setFirstcl('white');setFirstbgcl('black');setSecondcl('black');setSecondbgcl('#fcce4e');}}>
-            <Navbar color={secondcl} bgcolor={secondbgcl} text="Events"/>
+            <Navbar color={secondcl} bgcolor={secondbgcl} text="Team"/>
           </TouchableHighlight>
         </View>
         <Condition nav={nav} />
