@@ -13,12 +13,12 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
       <Stack.Navigator initialRouteName="Clubs" screenOptions={{headerShown:false , headerStyle:{backgroundColor:'black'}}} >
         <Stack.Screen name="Clubs" component={Clubs} />
         <Stack.Screen name="Anime" component={Anime}  />
       </Stack.Navigator>
-    </NavigationContainer>  
+    // </NavigationContainer>  
   );
 }
 

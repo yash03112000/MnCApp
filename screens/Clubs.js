@@ -181,6 +181,12 @@ const CutomHeaderScreen = () => {
     extrapolate: 'clamp',
   })
 
+  const opacity2 = scrollY.y.interpolate({
+    inputRange: [0, 30, 90],
+    outputRange: [1, 0.7, 0],
+    extrapolate: 'clamp',
+  })
+
   return (
     <View>
       <Header opacity={opacity} title="Clubs" back={false} />
@@ -190,8 +196,10 @@ const CutomHeaderScreen = () => {
       )}>
         <View style={{width:width}}>
             <ImageBackground source={require('../public/dnacover1.jpg')} style={{width:width,height:250}}>
-              <Image source={require('../public/MnC.png')} style={{resizeMode:'cover',width:70,height:70,top:20,left:20} } />
-              <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:20,width:150,marginTop:20,fontWeight: 'bold'}}>Clubs</Text>
+              <OldAnim.View style={{opacity:opacity2}}>
+                <Image source={require('../public/MnC.png')} style={{resizeMode:'cover',width:70,height:70,top:20,left:20} } />
+                <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:20,width:150,marginTop:20,fontWeight: 'bold'}}>Clubs</Text>
+              </OldAnim.View>
             </ImageBackground>
         </View>
         <Club />

@@ -53,7 +53,7 @@ export default  App = ()=> {
       />
       <Tab.Screen
         name="Clubs"
-        component={Clubs}
+        component={Stack}
         // options={{
         //   tabBarLabel: 'Clubs',
         //   tabBarColor:'#f1dab0',

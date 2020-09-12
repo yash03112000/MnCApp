@@ -93,7 +93,8 @@ const styles = StyleSheet.create({
     // width:'80%',
     padding: 10,
     backgroundColor:'black',
-    // alignContent:'center'
+    paddingTop:30,
+    paddingBottom:200
   },
   contentText: {
     fontSize: 20,
@@ -178,6 +179,13 @@ const CutomHeaderScreen = () => {
     outputRange: [0, 0, 1],
     extrapolate: 'clamp',
   })
+  const opacity2 = scrollY.y.interpolate({
+    inputRange: [0, 30, 90],
+    outputRange: [1, 0.7, 0],
+    extrapolate: 'clamp',
+  })
+
+
 
   return (
     <View>
@@ -188,9 +196,12 @@ const CutomHeaderScreen = () => {
       )}>
         <View style={{width:width}}>
             <ImageBackground source={require('../public/dnacover1.jpg')} style={{width:width,height:250}}>
-              <Image source={require('../public/MnC.png')} style={{resizeMode:'cover',width:70,height:70,top:20,left:20} } />
-              <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:20,width:150,marginTop:20,fontWeight: 'bold'}}>About</Text>
-              <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:40,marginTop:10,fontWeight: 'bold',width:190}}>Us</Text>
+              <OldAnim.View style={{opacity:opacity2}}>
+                  <Image source={require('../public/MnC.png')} style={{resizeMode:'cover',width:70,height:70,top:20,left:20} } />
+                  <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:20,width:150,marginTop:20,fontWeight: 'bold'}}>About</Text>
+                  <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:40,marginTop:10,fontWeight: 'bold',width:190}}>Us</Text>
+              </OldAnim.View>  
+
             </ImageBackground>
         </View>
         <View style={{flexDirection:'row',backgroundColor:'black',paddingVertical:10,justifyContent:'center'}}>
@@ -226,7 +237,7 @@ const Home = () => (
 
 
 const Team = () => (
-  <View style={styles.contentContiner2}>
+  <View style={[styles.contentContiner2]}>
     <Namecard image="dnacover" title="John Doe" subtitle="General Secratery"/>
     <Namecard image="dnacover" title="John Doe" subtitle="General Secratery"/>
     <Namecard image="dnacover" title="John Doe" subtitle="General Secratery"/>

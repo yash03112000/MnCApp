@@ -208,6 +208,8 @@ const CutomHeaderScreen = ({navigation}) => {
 
 
 
+
+
   return (
 
     <View>
@@ -218,9 +220,11 @@ const CutomHeaderScreen = ({navigation}) => {
       )}>
         <View style={{width:width}}>
             <ImageBackground source={require('../public/dnacover1.jpg')} style={{width:width,height:250}}>
-              <Image source={require('../public/animenew.png')} style={{resizeMode:'cover',width:70,height:70,top:20,left:20} } />
-              <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:20,width:150,marginTop:20,fontWeight: 'bold'}}>Anime</Text>
-              <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:40,marginTop:10,fontWeight: 'bold',width:190}}>Society</Text>
+              <OldAnim.View style={{opacity:opacity2}}>
+                <Image source={require('../public/animenew.png')} style={{resizeMode:'cover',width:70,height:70,top:20,left:20} } />
+                <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:20,width:150,marginTop:20,fontWeight: 'bold'}}>Anime</Text>
+                <Text style={{fontSize:40,color:'white',top:10,backgroundColor:'rgba(0, 0, 0,0.6)',paddingLeft:40,marginTop:10,fontWeight: 'bold',width:190}}>Society</Text>
+              </OldAnim.View>
             </ImageBackground>
         </View>
         <View style={{flexDirection:'row',backgroundColor:'black',paddingVertical:10,justifyContent:'center'}}>
@@ -272,6 +276,12 @@ The Anime Society conducts activities galore all around the year. We conduct spe
 const opacity = scrollY.y.interpolate({
   inputRange: [0, 60, 90],
   outputRange: [0, 0, 1],
+  extrapolate: 'clamp',
+})
+
+const opacity2 = scrollY.y.interpolate({
+  inputRange: [0, 30, 90],
+  outputRange: [1, 0.7, 0],
   extrapolate: 'clamp',
 })
 
